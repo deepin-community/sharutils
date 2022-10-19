@@ -1,0 +1,2 @@
+version=3
+opts=pgpsigurlmangle=s/$/.sig/ https://ftp.gnu.org/gnu/sharutils/sharutils-(\d.*)\.tar\.xz

@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+package = sharutils
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=-format
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf doc/$(package)
+
+override_dh_installdocs-indep:
+	cd doc && makeinfo --html --split=chapter $(package).texi
+	dh_installdocs -i doc/$(package)/*.html
+
+override_dh_installdocs-arch:
+	dh_installdocs -a README TODO NEWS THANKS

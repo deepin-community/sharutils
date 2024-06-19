@@ -1,3 +1,41 @@
+sharutils (1:4.15.2-9) unstable; urgency=medium
+
+  * Call makeinfo using --output option. This allows the package to be
+    built with Texinfo 7. Thanks to Hilmar Preusse. Closes: #1030371.
+  * Run wrap-and-sort.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 03 Feb 2023 19:10:00 +0100
+
+sharutils (1:4.15.2-8) unstable; urgency=medium
+
+  * Include upstream signature.
+  * Use a common debian/watch file which is valid for most GNU packages.
+
+ -- Santiago Vila <sanvila@debian.org>  Tue, 20 Dec 2022 23:05:00 +0100
+
+sharutils (1:4.15.2-7) unstable; urgency=medium
+
+  * Set upstream metadata fields Bug-Submit, Name and Repository-Browse.
+  * Drop unnecessary dependency on dh-autoreconf.
+  * Update standards version to 4.6.1, no changes needed.
+  * Remove field Priority on binary package sharutils-doc.
+  * Update watch file format version to 4.
+
+ -- Santiago Vila <sanvila@debian.org>  Tue, 13 Dec 2022 19:12:00 +0100
+
+sharutils (1:4.15.2-6) unstable; urgency=medium
+
+  * Modify libopts.m4 so that POSIX_SHELL is accepted from the
+    environment during the configure step. Closes: #992651.
+    This should allow building both with or without usr-merge.
+    Run autoreconf so that the modified m4 files are picked up.
+    Thanks a lot to Simon McVittie.
+  * Raise debhelper compat level.
+  * Update paths in debian/sharutils-doc.doc-base, as docs are now
+    installed directly in /usr/share/doc/sharutils.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 22 Jul 2022 12:05:00 +0200
+
 sharutils (1:4.15.2-5) unstable; urgency=medium
 
   * Fix FTBFS with gcc-10. Closes: #957790.

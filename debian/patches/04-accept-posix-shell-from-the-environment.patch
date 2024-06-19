@@ -1,0 +1,40 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sat, 21 Aug 2021 19:19:03 +0100
+Subject: libopts.m4: accept POSIX_SHELL from the environment during
+ the configure step
+
+This lets us set it to the canonical path /bin/bash, even on systems
+where both /bin/bash and /usr/bin/bash are available, and therefore
+which(1) might return /usr/bin/bash (depending on PATH order).
+
+Both copies of libopts.m4 are marked as generated files, but the files
+from which they were generated do not seem to be present in the sharutils
+package. This change is equivalent to part of a 2016 autogen commit
+<https://git.savannah.gnu.org/cgit/autogen.git/commit/?id=db064b9a>.
+
+Origin: https://git.savannah.gnu.org/cgit/autogen.git/commit/?id=db064b9a
+---
+ libopts/m4/libopts.m4 | 1 +
+ m4/libopts.m4         | 1 +
+ 2 files changed, 2 insertions(+)
+
+--- a/libopts/m4/libopts.m4
++++ b/libopts/m4/libopts.m4
+@@ -114,6 +114,7 @@
+   AC_PROG_SED
+   [while :
+   do
++      test -x "$POSIX_SHELL" && break
+       POSIX_SHELL=`which bash`
+       test -x "$POSIX_SHELL" && break
+       POSIX_SHELL=`which dash`
+--- a/m4/libopts.m4
++++ b/m4/libopts.m4
+@@ -114,6 +114,7 @@
+   AC_PROG_SED
+   [while :
+   do
++      test -x "$POSIX_SHELL" && break
+       POSIX_SHELL=`which bash`
+       test -x "$POSIX_SHELL" && break
+       POSIX_SHELL=`which dash`

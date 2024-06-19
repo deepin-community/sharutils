@@ -2,16 +2,16 @@ Source: sharutils
 Section: utils
 Priority: optional
 Maintainer: Santiago Vila <sanvila@debian.org>
-Standards-Version: 3.9.8
-Build-Depends: debhelper (>= 9.20120311), texinfo
+Standards-Version: 4.6.1
+Build-Depends: debhelper-compat (= 13), texinfo
 Homepage: https://www.gnu.org/software/sharutils/
 Rules-Requires-Root: no
 
 Package: sharutils
 Conflicts: shar, uuencode
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: sharutils-doc, bsd-mailx | mailx
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Suggests: bsd-mailx | mailx, sharutils-doc
 Multi-Arch: foreign
 Description: shar, unshar, uuencode, uudecode
  `shar' makes so-called shell archives out of many files, preparing
@@ -25,7 +25,6 @@ Description: shar, unshar, uuencode, uudecode
 
 Package: sharutils-doc
 Section: doc
-Priority: optional
 Architecture: all
 Depends: ${misc:Depends}
 Description: Documentation for GNU sharutils

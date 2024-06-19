@@ -12,5 +12,5 @@ Abstract: This manual documents GNU sharutils.
 Section: Text
 
 Format: HTML
-Index: /usr/share/doc/sharutils-doc/index.html
-Files: /usr/share/doc/sharutils-doc/*.html
+Index: /usr/share/doc/sharutils/index.html
+Files: /usr/share/doc/sharutils/*.html
